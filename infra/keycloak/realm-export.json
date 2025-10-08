@@ -1,0 +1,101 @@
+{
+  "realm": "drift-sentinel",
+  "enabled": true,
+  "displayName": "Drift Sentinel",
+  "users": [
+    {
+      "username": "testuser",
+      "enabled": true,
+      "email": "testuser@driftsentinel.com",
+      "firstName": "Test",
+      "lastName": "User",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "test123",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["user"]
+    },
+    {
+      "username": "analyst",
+      "enabled": true,
+      "email": "analyst@driftsentinel.com",
+      "firstName": "Data",
+      "lastName": "Analyst",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "analyst123",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["analyst", "user"]
+    },
+    {
+      "username": "mlops_user",
+      "enabled": true,
+      "email": "mlops@driftsentinel.com",
+      "firstName": "MLOps",
+      "lastName": "Engineer",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "mlops123",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["mlops", "analyst", "user"]
+    },
+    {
+      "username": "admin",
+      "enabled": true,
+      "email": "admin@driftsentinel.com",
+      "firstName": "System",
+      "lastName": "Admin",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin123",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["admin", "mlops", "analyst", "user"]
+    }
+  ],
+  "roles": {
+    "realm": [
+      {
+        "name": "user",
+        "description": "Basic user access - can upload data and get predictions"
+      },
+      {
+        "name": "analyst",
+        "description": "Data analyst - can view reports and metrics"
+      },
+      {
+        "name": "mlops",
+        "description": "MLOps engineer - can retrain and promote models"
+      },
+      {
+        "name": "admin",
+        "description": "System administrator - full access"
+      }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "drift-sentinel-api",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "serviceAccountsEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "redirectUris": ["*"],
+      "webOrigins": ["*"]
+    }
+  ]
+}

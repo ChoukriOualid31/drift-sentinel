@@ -1,0 +1,12 @@
+{
+  "thresholds": {
+    "min_accuracy": 0.80,
+    "min_f1_score": 0.75,
+    "min_roc_auc": 0.85,
+    "max_drift_score": 0.15
+  },
+  "config": {
+    "enforce_business_hours": false,
+    "require_approval": false
+  }
+}
